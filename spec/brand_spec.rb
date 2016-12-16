@@ -7,4 +7,11 @@ describe Brand do
       expect(brand.save).to(eq(false))
     end
   end
+
+  describe('#upcase') do
+    it('saves brands with a capital letter') do
+      brand = Brand.create({:name => "chippewa"})
+      expect(brand.name).to(eq("Chippewa"))
+    end
+  end 
 end

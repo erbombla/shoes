@@ -16,7 +16,7 @@ _As a user, I want to:_
 * Associate the same brand of shoes with multiple stores
 * See all of the brands a store sells on the individual store page
 * Save names and shoe brands with a capital letter
-* I do not want stores and shoe brands to be saved if I enter a blank name
+* _I do not want_ stores and shoe brands to be saved if I enter a blank name
 
 ## Setup/Installation Requirements
 
