@@ -2,10 +2,17 @@ ENV['RACK_ENV'] = 'test'
 require('rspec')
 require('pg')
 require('sinatra/activerecord')
-# require('project')
+require('shoulda-matchers')
+require('capybara/rspec')
+require('./app')
+Capybara.app = Sinatra::Application
+set(:show_exceptions, false)
+require('brand')
+require('store')
 
 RSpec.configure do |config|
   config.after(:each) do
-    # Project.all.each(&:destroy)
+    Brand.all.each(&:destroy)
+    Store.all.each(&:destroy)
   end
 end
