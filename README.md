@@ -1,9 +1,9 @@
 # _Shoe Distribution_
 
 #### Web app for an online shoe store
-#### Dec. 15, 2016
 
-#### By **Eric Bomblatus**
+#### By Eric Bomblatus
+#### Dec. 15, 2016
 
 **User Stories**
 
@@ -20,7 +20,7 @@ _As a user, I want to:_
 
 ## Setup/Installation Requirements
 
-* Clone this repo: `git clone git@github.com:erbombla/{repo}.git`
+* Clone this repo: `git clone https://github.com/erbombla/shoes.git`
 * Change to the repo directory: `cd {repo}`
 * Install gems: `bundle install --path vendor/bundle`
 * Install the database: *instruction below*
