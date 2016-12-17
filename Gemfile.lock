@@ -105,3 +105,6 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
   sinatra-contrib
+
+BUNDLED WITH
+   1.13.6
