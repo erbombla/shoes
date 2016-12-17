@@ -6,7 +6,7 @@ class Brand < ActiveRecord::Base
   private
 
     define_method(:upcase) do
-      self.name = name.capitalize
+      self.name = self.name.split.map(&:capitalize).join(" ")
     end
 
 end

@@ -1,5 +1,3 @@
-require('spec_helper')
-
 describe Store do
   describe ('#validation') do
     it('validates presence of description') do
@@ -14,6 +12,13 @@ describe Store do
       brand = Brand.create({:name => "Chippewa"})
       store.brands.push(brand)
       expect(store.brands).to(eq([brand]))
+    end
+  end
+
+  describe('#upcase') do
+    it('saves store names with a capital letter') do
+      store = Store.create({:name => "boot company"})
+      expect(store.name).to(eq("Boot Company"))
     end
   end
 end
