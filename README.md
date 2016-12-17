@@ -1,6 +1,6 @@
 # _Shoe Distribution_
 
-#### Web app for an online shoe store
+#### Web app for shoe distributor 
 
 #### By Eric Bomblatus
 #### Dec. 15, 2016
