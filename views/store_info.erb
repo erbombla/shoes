@@ -4,15 +4,16 @@
 <h3> Saved Stores </h3>
 <% if @all_stores.any? %>
 <ul>
-  <% @stores.each do |store| %>
-    <li><a href = "/store_info/store_form/<%= store.id %>"><%= store.name %></a></li>
+  <% @all_stores.each do |store| %>
+    <li><a href = "/store_info/store/<%= store.id %>"><%= store.name %></a></li>
+    <% end %>
 </ul>
-  <% end %>
+  <% else %>
     <p><span class="text-warning"> No Saved Stores <span></p>
   <% end %>
 
-<h3> Add New Store </h3>
-<form action="/store_info/new_store" method="post">
+<h3> Add New </h3>
+<form action="/stores/new_store" method="post">
   <div class="form-group row">
     <label for="name_input" class="col-xs-2 col-form-label">Name of Store</label>
     <div class="col-xs-10">

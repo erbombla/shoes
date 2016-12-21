@@ -7,7 +7,6 @@ gem('pg')
 gem('sinatra')
 gem('launchy')
 gem("shoulda-matchers", '~> 2.0')
-gem("activerecord", "< 5.0.0")
 
 group(:test) do
   gem('rspec')

@@ -5,14 +5,16 @@
 <% if @all_brands.any? %>
 <ul>
   <% @all_brands.each do |brand| %>
-    <li><a href = "/brand_info/brand_form/<%= brand.id %>"><%= brand.name %></a></li>
+    <li><a href = "/brand_info/brand/<%= brand.id %>"><%= brand.name %></a></li>
+    <% end %>
 </ul>
-  <% end %>
+  <% else %>
     <p><span class="text-warning"> No Saved Brands <span></p>
   <% end %>
 
 <h3> Add New Brand </h3>
-<form action="/brand_info/create_brand" method="post">
+<br>
+<form action="/brands/create_brand" method="post">
   <div class="form-group row">
     <label for="name_input" class="col-xs-2 col-form-label">Name of Brand</label>
     <div class="col-xs-10">
