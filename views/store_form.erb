@@ -1,29 +1,27 @@
 <h2><span class ="text-info"><%= @current_brand.name %> </span></h2>
 <hr>
 
-<h3> Edit Brand </h3>
-  <h4><span class="text-info"><%= @current_store.name %></span>: Current Stock </h4>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Brand</th>
-        <th>Style No.</th>
-        <th>Size</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if @current_store_brands.any? %>
-       <tr>
-         <% @current_store_brands.each do |brand| %>
-         <td><%= brand.name %></td>
-       </tr>
-     <% end %>
-   </tbody>
-  </table>
+<h4><span class="text-info"><%= @current_store.name %></span>: Current Stock </h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Style No.</th>
+      <th>Size</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @current_store_brands.any? %>
+     <tr>
+       <% @current_store_brands.each do |brand| %>
+       <td><%= brand.name %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
 <% else %>
-  <p><span class="text-warning">No Saved Data</span></p>
+<p><span class="text-warning">No Saved Data</span></p>
 <% end %>
 <br>
 

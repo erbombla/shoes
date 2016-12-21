@@ -11,14 +11,14 @@ get ('/store_info') do
   erb(:store_info)
 end
 
-post ('/store_info/new_store') do
-  name_input = params.fetch('name_input')
-  @new_store = Store.create({name: name_input})
-  @new_store.save
-  erb :store_info
-end
+# post ('/store_info/new_store') do
+#   name_input = params.fetch('name_input')
+#   @new_store = Store.create({name: name_input})
+#   @new_store.save
+#   erb :store_info
+# end
 
-get('store_info/store_form/:id') do
+get('store_form/:id') do
   @current_store = Store.find(params[:id].to_i)
   @current_store_brands = @current_store.brands
   @all_brands = Brand.all
@@ -30,12 +30,12 @@ get ('/brand_info') do
   erb(:brand_info)
 end
 
-post ('/brand_info/new_brand') do
-  name_input = params.fetch('name_input')
-  @new_brand = Brand.create({name: name_input})
+patch ('/brand/new_brand') do
+  name_input = params.fetch('new_name')
+  @new_brand = Brand.create({name: new_name})
 end
 
-get ('brand_info/brand_form/:id') do
+get ('brand_form/:id') do
   @current_brand = Brand.find(params[:id].to_i)
   erb(:brand_form)
 end

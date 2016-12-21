@@ -1,16 +1,15 @@
-<h2> Store Management </h2>
+<h2> Store Information </h2>
 <br>
 
 <h3> Saved Stores </h3>
 <% if @all_stores.any? %>
 <ul>
-  <% @all_stores.each do |store| %>
+  <% @stores.each do |store| %>
     <li><a href = "/store_info/store_form/<%= store.id %>"><%= store.name %></a></li>
 </ul>
   <% end %>
     <p><span class="text-warning"> No Saved Stores <span></p>
   <% end %>
-
 
 <h3> Add New Store </h3>
 <form action="/store_info/new_store" method="post">
