@@ -1,0 +1,47 @@
+<h2><span class ="text-info"><%= @current_brand.name %> </span></h2>
+<hr>
+
+<h3> Edit Brand </h3>
+  <h4><span class="text-info"><%= @current_store.name %></span>: Current Stock </h4>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Style No.</th>
+        <th>Size</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @current_store_brands.any? %>
+       <tr>
+         <% @current_store_brands.each do |brand| %>
+         <td><%= brand.name %></td>
+       </tr>
+     <% end %>
+   </tbody>
+  </table>
+<% else %>
+  <p><span class="text-warning">No Saved Data</span></p>
+<% end %>
+<br>
+
+<h3> Add New Brand to Store </h3>
+<% if @all_brands.any?() %>
+<form action="/store/<%= @current_store.id %>/add_brand" method="post">
+  <input type = "hidden" name ="_method" value="patch">
+  <div class="form-group row">
+    <select class="form-control" name="added_brand" id="added_brand">
+      <% @all_brands.each do |brand| %>
+        <option value="<% brand.id %>"><%= brand.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+<% else %>
+  <a href="/brand_info" class="btn btn-default">Manage Brands</a>
+<% end %>
+
+<a href="/" class="btn btn-info">Home</a>

@@ -14,11 +14,13 @@ end
 post ('/store_info/new_store') do
   name_input = params.fetch('name_input')
   @new_store = Store.create({name: name_input})
+  @new_store.save
+  erb :store_info
 end
 
 get('store_info/store_form/:id') do
   @current_store = Store.find(params[:id].to_i)
-  @current_store_brans = @current_store.brands
+  @current_store_brands = @current_store.brands
   @all_brands = Brand.all
   erb(:store_form)
 end
@@ -42,4 +44,4 @@ delete('store_form/:id/delete') do
   @current_store = Store.find(params[:id])
   @current_store.destroy
   redirect('/store_info')
-end 
+end

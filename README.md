@@ -1,6 +1,6 @@
 # _Shoe Distribution_
 
-#### Web app for shoe distributor 
+#### Web app for shoe distributor
 
 #### By Eric Bomblatus
 #### Dec. 15, 2016
@@ -17,6 +17,9 @@ _As a user, I want to:_
 * See all of the brands a store sells on the individual store page
 * Save names and shoe brands with a capital letter
 * _I do not want_ stores and shoe brands to be saved if I enter a blank name
+
+_Additional Notes:_
+* Columns for brand information (style, size and price) are intentionally left blank as an additional feature 
 
 ## Setup/Installation Requirements
 

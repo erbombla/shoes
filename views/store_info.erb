@@ -1,0 +1,26 @@
+<h2> Store Management </h2>
+<br>
+
+<h3> Saved Stores </h3>
+<% if @all_stores.any? %>
+<ul>
+  <% @all_stores.each do |store| %>
+    <li><a href = "/store_info/store_form/<%= store.id %>"><%= store.name %></a></li>
+</ul>
+  <% end %>
+    <p><span class="text-warning"> No Saved Stores <span></p>
+  <% end %>
+
+
+<h3> Add New Store </h3>
+<form action="/store_info/new_store" method="post">
+  <div class="form-group row">
+    <label for="name_input" class="col-xs-2 col-form-label">Name of Store</label>
+    <div class="col-xs-10">
+      <input class="form-control" type="text" id="name_input" name="name_input">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<a href="/" class="btn btn-info">Home</a>
