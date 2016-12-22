@@ -1,16 +1,18 @@
 <h2><span class="text-info"><%= @current_brand.name %></span></h2>
 <hr>
 
-<form action="/brand/<%= @current_brand.id %>/update_name" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <div class="form-group row">
-    <label for="new_name" class="col-xs-2 col-form-label">Edit</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="text" id="new_name" name="new_name">
+<div class="well">
+  <form action="/brand/<%= @current_brand.id %>/update_name" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group row">
+      <label for="new_name" class="col-xs-2 col-form-label">Edit</label>
+      <div class="col-xs-10">
+        <input class="form-control" type="text" id="new_name" name="new_name" required>
+      </div>
     </div>
-  </div>
-  <button type="submit" class="btn btn-warning">Update</button>
-</form>
+    <button type="submit" class="btn btn-warning">Update</button>
+  </form>
+</div>
 
 <a href="/" class="btn btn-info">Home</a>
 <br>

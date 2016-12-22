@@ -59,3 +59,16 @@ patch ('/brand/:id/update_name') do
   @current_brand.update({:name => @new_name})
   redirect ("/brand_info")
 end
+
+patch ('/store/:id/update_name') do
+  @current_store = Store.find(params[:id])
+  @new_name = params.fetch('new_name')
+  @current_store.update({:name => @new_name})
+  redirect ("/store_info/store/#{@current_store.id}")
+end
+
+delete ('/store/:id/delete') do
+  @current_store = Store.find(params[:id])
+  @current_store.destroy
+  redirect ("/store_info")
+end

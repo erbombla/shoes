@@ -1,7 +1,7 @@
 <h2><span class ="text-info"><%= @current_store.name %> </span></h2>
 <hr>
 
-<h4> Current Stock </h4>
+<h3> Current Stock </h3>
 <% if @current_store_brands.any? %>
 <table class="table table-striped">
   <thead>
@@ -24,6 +24,7 @@
       <p><span class="text-danger">No Saved Data</span></p>
     <% end %>
 
+<div class = "well">
   <% if @all_brands.any? %>
   <h3> Add New </h3>
   <form action="/add_brand/<%= @current_store.id %>" method="post">
@@ -58,7 +59,31 @@
     </div>
     <button type="submit" class="btn btn-success">Add</button>
   </form>
-<% end %>
+  <% end %>
+</div>
+
+<div class="well">
+  <h3> Edit Name </h3>
+    <form action="/store/<%= @current_store.id %>/update_name" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="form-group row">
+        <label for="new_name" class="col-xs-2 col-form-label">Store Name</label>
+        <div class="col-xs-10">
+          <input type="text" name="new_name" id="new_name" class="form-control">
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+</div>
+
+<h3> Danger Zone! Delete Store </h3>
+  <form action="/store/<%= @current_store.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+<br>
+<a href="/brand_info" class="btn btn-info">Manage Brands</a>
 <br>
 <br>
 <a href="/" class="btn btn-info">Home</a>
