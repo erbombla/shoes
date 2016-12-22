@@ -32,38 +32,18 @@ post ('/brands/create_brand') do
   end
 end
 
-# get('store_form/:id') do
-#   @current_store = Store.find(params[:id].to_i)
-#   @current_store_brands = @current_store.brands
-#   @all_brands = Brand.all
-#   erb(:store_form)
-# end
-#
-# get ('/brand_info') do
-#   @all_brands = Brand.all()
-#   erb(:brand_info)
-# end
-#
-# patch ('/brands/create_brand') do
-#   new_name = params.fetch('new_name')
-#   @new_brand = Brand.create({name: new_name})
-# end
-#
-# get ('brand_form/:id') do
-#   @current_brand = Brand.find(params[:id].to_i)
-#   erb(:brand_form)
-# end
-#
-# post ('/brand_info/create_brand') do
-#   name_input = params.fetch('name_input')
-#   @new_brand = Brand.create({name: name_input})
-#   if @new_brand.save
-#     redirect('/brand_info')
-#   end
-# end
-#
-# delete('store_form/:id/delete') do
-#   @current_store = Store.find(params[:id])
-#   @current_store.destroy
-#   redirect('/store_info')
-# end
+get ('/store_info/store/:id') do
+  @current_store = Store.find(params[:id])
+  @current_store_brands = @current_store.brands
+  @all_brands = Brand.all
+  erb(:store)
+end
+
+patch ('/add_brand/:id') do
+  @current_store = Store.find(params[:id].to_i)
+  added_brand = Brand.find(params[:added_brand])
+  if @current_store.save
+    @current_store.brands.push(added_brand)
+    redirect("/store_info/store/#{@current_store.id}")
+  end
+end
