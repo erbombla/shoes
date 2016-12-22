@@ -32,9 +32,9 @@ _Additional Notes:_
 ## Database Setup Instructions
 
 * install and start postgres
-* run: `bundle exec rake db:create`
-* run: `bundle exec rake db:migrate`
-* run: `bundle exec rake db:test:prepare`
+* run: `rake db:create`
+* run: `rake db:migrate`
+* run: `rake db:test:prepare`
 
 ## Technologies Used
 
