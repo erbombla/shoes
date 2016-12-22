@@ -19,7 +19,7 @@ _As a user, I want to:_
 * _I do not want_ stores and shoe brands to be saved if I enter a blank name
 
 _Additional Notes:_
-* Columns and inputs for style number, size and price are intentionally left blank as an additional feature
+* Columns and inputs for style number, size and price are intentionally left blank as an additional features
 
 ## Setup/Installation Requirements
 

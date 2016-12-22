@@ -47,3 +47,15 @@ patch ('/add_brand/:id') do
     redirect("/store_info/store/#{@current_store.id}")
   end
 end
+
+get ('/brand_info/brand/:id') do
+  @current_brand = Brand.find(params[:id])
+  erb :brand
+end
+
+patch ('/brand/:id/update_name') do
+  @current_brand = Brand.find(params[:id])
+  @new_name = params.fetch('new_name')
+  @current_brand.update({:name => @new_name})
+  redirect ("/brand_info")
+end

@@ -1,7 +1,7 @@
 <h2><span class="text-info"><%= @current_brand.name %></span></h2>
 <hr>
 
-<form action="/brand/<% @current_brand.id %>/update_name" method="post">
+<form action="/brand/<%= @current_brand.id %>/update_name" method="post">
   <input type="hidden" name="_method" value="patch">
   <div class="form-group row">
     <label for="new_name" class="col-xs-2 col-form-label">Edit</label>
@@ -13,4 +13,6 @@
 </form>
 
 <a href="/" class="btn btn-info">Home</a>
+<br>
+<br>
 <a href="/brand_info" class="btn btn-default">Manage Brands</a>
